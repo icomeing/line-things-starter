@@ -46,7 +46,7 @@ def handle_things_event(event):
 
     button_state = int.from_bytes(base64.b64decode(event.things.result.ble_notification_payload), 'little')
     if button_state > 0:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="Button is pressed!"))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="Button is pressed! Sid test"))
 
 if __name__ == "__main__":
     app.run(debug=True)
