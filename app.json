@@ -8,7 +8,7 @@
         "python"
     ],
     "website": "https://developers.line.biz/en/docs/line-things/",
-    "repository": "https://github.com/line/line-things-starter",
+    "repository": "https://github.com/icomeing/line-things-starter",
     "env": {
         "LINE_CHANNEL_SECRET": {
             "description": "Channel secret of LINE Messaging API",
