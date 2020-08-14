@@ -49,9 +49,9 @@ def handle_things_event(event):
 #        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="Button is pressed! Sid test123"))
 
     payload_byte =base64.b64decode(event.things.result.ble_notification_payload);
-    temperature_byte= payload_byte[0:1];
+    temperature_byte= payload_byte[0:2];
     temperature = int.from_bytes(temperature_byte, 'little')/100.00;
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="Temperature:"+temperature));
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="Temperature:"+str(temperature)));
 
 if __name__ == "__main__":
     app.run(debug=True)
