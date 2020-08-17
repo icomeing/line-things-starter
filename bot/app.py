@@ -50,8 +50,10 @@ def handle_things_event(event):
 
     payload_byte =base64.b64decode(event.things.result.ble_notification_payload);
     temperature_byte= payload_byte[0:2];
+    humidity_byte= payload_byte[2];
     temperature = int.from_bytes(temperature_byte, 'little')/100.00;
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="Temperature:"+str(temperature)));
+    humidity= int.from_bytes(humidity_byte, 'little');
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="溫度:"+str(temperature)+",濕度:"+str(humidity)));
 
 if __name__ == "__main__":
     app.run(debug=True)
