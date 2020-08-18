@@ -52,7 +52,7 @@ def handle_things_event(event):
     temperature_byte= payload_byte[0:2];
     humidity_byte= payload_byte[2];
     temperature = int.from_bytes(temperature_byte, 'little')/100.00;
-    humidity= int.from_bytes(humidity_byte, 'little');
+#    humidity= int.from_bytes(humidity_byte, 'little');
 #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="T:"+str(temperature)+",H:"+str(humidity)));
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text="T:"+str(temperature)));
 
