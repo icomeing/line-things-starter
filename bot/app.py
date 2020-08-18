@@ -54,7 +54,8 @@ def handle_things_event(event):
     temperature = int.from_bytes(temperature_byte, 'little')/100.00;
 #    humidity= int.from_bytes(humidity_byte, 'little');
 #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="T:"+str(temperature)+",H:"+str(humidity)));
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="T:"+str(temperature)));
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="溫度:"+str(temperature)+"℃,濕度:"+str(humidity)+"%"));
+#    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="T:"+str(temperature)));
 
 if __name__ == "__main__":
     app.run(debug=True)
